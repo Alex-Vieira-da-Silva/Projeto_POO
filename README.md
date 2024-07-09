@@ -14,11 +14,12 @@ Com base no vídeo de lançamento do iPhone de 2007 (link abaixo), você deve el
 
 ### Objetivo
 1. Criar um diagrama UML que represente as funcionalidades descritas acima.
-2. Implementar as classes e interfaces correspondentes em Java (Opcional).
+2. Implementar as classes e interfaces correspondentes em Java.
+3. Foi utilizada a "IDE" Eclipse para o desenvolvimento do projeto.
 
 ### Instruções
 1. Assista ao vídeo do lançamento do iPhone para entender as funcionalidades principais.
-2. Foi Utilizada a ferramenta UML Visual Paradigm versão 17.2 para criar o diagrama das classes e interfaces. 
+2. Foi Utilizada a ferramenta UML Visual Paradigm versão 17.2 para criar o diagrama das classes e interfaces.  
 3. Opcionalmente, caso esteja cheio(a) de confiança, pode implementar as classes Java representadas em seu diagrama UML.
 4. Submeta seu repositório GitHub conforme as orientações da plataforma DIO. Por exemplo:
 
