@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.apple.service.IReprodutorFoto"/>
+    <fullyQualifiedTypeName name="com.apple.service.IReprodutorVideo"/>
+    <fullyQualifiedTypeName name="com.apple.service.INavegaInternet"/>
+    <fullyQualifiedTypeName name="com.apple.service.ISms"/>
+    <fullyQualifiedTypeName name="com.apple.service.IEmail"/>
+    <fullyQualifiedTypeName name="com.apple.service.IAparelhoTelefonico"/>
+    <fullyQualifiedTypeName name="com.apple.service.ICarregar"/>
+    <fullyQualifiedTypeName name="com.apple.service.IVolume"/>
+    <fullyQualifiedTypeName name="com.apple.service.ICamera"/>
+    <fullyQualifiedTypeName name="com.apple.service.ICalendario"/>
+    <fullyQualifiedTypeName name="com.apple.model.Aparelho"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.html.HTMLMapElement"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,12 @@
+package com.apple.service;
+
+public interface IAparelhoTelefonico {
+
+	public String fazerLigacao(String numero);
+	public void atenderLigacao();
+	public void iniciarCorreioVoz();
+	public void encerrarLigacao();
+	public void vivaVoz();
+	public void listarChamadaEsperar();
+
+}

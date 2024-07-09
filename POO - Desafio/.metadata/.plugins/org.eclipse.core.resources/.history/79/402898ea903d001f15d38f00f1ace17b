@@ -1,0 +1,14 @@
+package com.apple.app;
+
+import com.apple.model.Aparelho;
+
+public class Iphone {
+
+	public static void main(String[] args) {
+		
+		Aparelho aperelho = new Aparelho();
+		
+		aperelho.ligar(null)
+		
+	}
+}

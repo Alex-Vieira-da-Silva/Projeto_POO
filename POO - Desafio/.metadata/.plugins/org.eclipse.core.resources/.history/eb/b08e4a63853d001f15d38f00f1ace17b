@@ -1,0 +1,82 @@
+package com.apple.model;
+
+import com.apple.service.INavegaInternet;
+import com.apple.service.IReprodutorFoto;
+import com.apple.service.IReprodutorMusical;
+import com.apple.service.IReprodutorVideo;
+
+public class Aparelho implements IReprodutorMusical, IReprodutorFoto, IReprodutorVideo,INavegaInternet {
+
+	@Override
+	public void tocar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pausar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String selecionarMusica(String musica) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String removerMusica(String musica) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String exibirPagina(String url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void adicionarNovaAba() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void atualizarPagina() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String selecionarVideo(String video) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String removerVideo(String video) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void proxima() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void anterior() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String selecionarfoto(String foto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

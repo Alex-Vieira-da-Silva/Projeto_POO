@@ -1,0 +1,222 @@
+package com.apple.model;
+
+import com.apple.service.IAparelhoTelefonico;
+import com.apple.service.ICalendario;
+import com.apple.service.ICamera;
+import com.apple.service.ICarregar;
+import com.apple.service.IEmail;
+import com.apple.service.INavegaInternet;
+import com.apple.service.IReprodutorFoto;
+import com.apple.service.IReprodutorMusical;
+import com.apple.service.IReprodutorVideo;
+import com.apple.service.ISms;
+import com.apple.service.IVolume;
+
+public class Aparelho implements IReprodutorMusical, IReprodutorFoto, IReprodutorVideo, 
+INavegaInternet, ISms, IEmail, IAparelhoTelefonico, ICarregar, IVolume, ICamera, ICalendario {
+
+	@Override
+	public void tocar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pausar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String selecionarMusica(String musica) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String removerMusica(String musica) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String exibirPagina(String url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void adicionarNovaAba() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void atualizarPagina() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String selecionarVideo(String video) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String removerVideo(String video) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void proxima() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void anterior() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String selecionarfoto(String foto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void obterData() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ligarCamera() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void tirarFoto() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void criarVideo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void desligarCamera() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void almentar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void diminuir() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void silenciar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void nivelBateria() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void carregar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void descarregado() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String ligar(String numero) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void atender() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void iniciarCorreioVoz() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void encerrar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void vivaVoz() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sileciar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void listarChamadaEsperar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String EnviarEmail(String mensagem) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void receberEmail() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String EnviarSms(String mensagem) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void receberSms() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

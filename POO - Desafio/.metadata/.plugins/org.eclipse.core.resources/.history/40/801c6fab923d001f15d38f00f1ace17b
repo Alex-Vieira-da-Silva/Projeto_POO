@@ -1,0 +1,17 @@
+package com.apple.app;
+
+import com.apple.model.Aparelho;
+
+public class Iphone {
+
+	public static void main(String[] args) {
+		
+		Aparelho aparelho = new Aparelho();
+		
+	
+		var t = aparelho.fazerLigacao("(87)98856-9588");
+		System.out.println(t);
+		
+		
+	}
+}

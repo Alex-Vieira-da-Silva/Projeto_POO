@@ -1,0 +1,9 @@
+package com.apple.service;
+
+public interface IVolume {
+
+	public void almentar();
+	public void diminuir();
+	public void silenciar();
+	
+}
