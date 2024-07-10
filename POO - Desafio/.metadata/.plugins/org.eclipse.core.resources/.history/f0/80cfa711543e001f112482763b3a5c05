@@ -45,7 +45,7 @@ public class Iphone implements IReprodutorMusical, IReprodutorFoto, IReprodutorV
 		System.out.println("Digite 5 para acessar as informações do iPhone!");
 		System.out.println("Digite 6 para desligar o iPhone!");
 		System.out.println("Digite 7 para ligar o iPhone!");
-		
+
 		Scanner scanner = new Scanner(System.in);
 		boolean validacaoLigarIphone = false;
 		int opcao = scanner.nextInt();
@@ -124,19 +124,18 @@ public class Iphone implements IReprodutorMusical, IReprodutorFoto, IReprodutorV
 
 			} else if (opcao == 4) {
 
-				System.out.println("----------------Aplicativos---------------");
+				System.out.println("--------Aplicativos--------");
 				System.out.println("Configurações");
 				System.out.println("Calculadora");
 				System.out.println("Facebook");
 				System.out.println("WhatsApp");
 				System.out.println("Netflix");
-				System.out.println("------------------------------------------");
-				System.out.println("Para voltar a tela inicial digite 0!");
-				
+				System.out.println("Para sair digite 5!");
+				System.out.println("----------------------------");
 				
 				int sair = scanner.nextInt();
 				
-				if (sair == 0)
+				if (sair == 5)
 					home();
 
 			} else if (opcao == 5) {
