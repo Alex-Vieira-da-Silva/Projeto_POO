@@ -2,21 +2,21 @@ package com.apple.model;
 
 import java.time.LocalDate;
 import java.util.Scanner;
-
+import com.apple.app.Aparelho;
 import com.apple.service.IAparelhoTelefonico;
+import com.apple.service.IBateria;
 import com.apple.service.ICalendario;
 import com.apple.service.ICamera;
-import com.apple.service.ICarregar;
 import com.apple.service.IEmail;
 import com.apple.service.INavegaInternet;
 import com.apple.service.IReprodutorFoto;
-import com.apple.service.IReprodutorMusical;
+import com.apple.service.IReprodutorMusica;
 import com.apple.service.IReprodutorVideo;
 import com.apple.service.ISms;
 import com.apple.service.IVolume;
 
-public class Iphone implements IReprodutorMusical, IReprodutorFoto, IReprodutorVideo, INavegaInternet, ISms, IEmail,
-		IAparelhoTelefonico, ICarregar, IVolume, ICamera, ICalendario {
+public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVideo, INavegaInternet, ISms, IEmail,
+		IAparelhoTelefonico, IBateria, IVolume, ICamera, ICalendario {
 	
 	private void ligarAparelho() {
 
@@ -45,6 +45,7 @@ public class Iphone implements IReprodutorMusical, IReprodutorFoto, IReprodutorV
 		System.out.println("Digite 5 para acessar as informações do iPhone!");
 		System.out.println("Digite 6 para desligar o iPhone!");
 		System.out.println("Digite 7 para ligar o iPhone!");
+		System.out.println("Digite 8 para outras opções!");
 		
 		Scanner scanner = new Scanner(System.in);
 		boolean validacaoLigarIphone = false;
@@ -130,6 +131,15 @@ public class Iphone implements IReprodutorMusical, IReprodutorFoto, IReprodutorV
 				System.out.println("Facebook");
 				System.out.println("WhatsApp");
 				System.out.println("Netflix");
+				System.out.println("Reprodutor de Musica");
+				System.out.println("Reprodutor de Foto");
+				System.out.println("Reprodutor de Video");
+				System.out.println("Navegado de Internet");
+				System.out.println("Sms");
+				System.out.println("Email");
+				System.out.println("Bateria");
+				System.out.println("Camera");
+				System.out.println("Calendario");
 				System.out.println("------------------------------------------");
 				System.out.println("Para voltar a tela inicial digite 0!");
 				
@@ -156,21 +166,12 @@ public class Iphone implements IReprodutorMusical, IReprodutorFoto, IReprodutorV
 				if (alternativa == 1) {
 
 					desligarAparelho();
-					System.out.println("Para ligar o iPhone digite 1!");
-					int ligar = scanner.nextInt();
-
-					if (ligar == 1) {
-
-						validacaoLigarIphone = true;
-						ligarAparelho();
-						home();
-
-					}
-
+					Aparelho.TelaInicial();
+					
 				} else if (alternativa == 2) {
 
 					reiniciarAparelho();
-					home();
+					Aparelho.TelaInicial();
 
 				}
 
@@ -188,6 +189,10 @@ public class Iphone implements IReprodutorMusical, IReprodutorFoto, IReprodutorV
 				}
 				
 
+			}else if (opcao == 8) {
+				
+				Aparelho.TelaInicial();
+				
 			} else {
 
 				System.out.println("Alternativa inválida, tente novamente!");
@@ -202,7 +207,7 @@ public class Iphone implements IReprodutorMusical, IReprodutorFoto, IReprodutorV
 			if (alternativa == 1) {
 
 				reiniciarAparelho();
-				home();
+				Aparelho.TelaInicial();
 			}
 
 		} finally {
