@@ -12,22 +12,25 @@ public class Aparelho {
 	}
 
 	public static void TelaInicial() {
-		
-		System.out.println("---------------------Sejam todos(a) Bem-Vindos ao Mundo Apple, iPhone I !---------------------------");
+
+		System.out.println(
+				"---------------------Sejam todos(a) Bem-Vindos ao Mundo Apple, iPhone I !---------------------------");
 		System.out.println();
-		System.out.println("Para acessar a tela principal do iPhone digite 1, ou para acessar o painel de controle digite 2!");
-		System.out.println("---------------------------------------------------------------------------------------------------");
+		System.out.println(
+				"Para acessar a tela principal do iPhone digite 1, ou para acessar o painel de controle digite 2!");
+		System.out.println(
+				"---------------------------------------------------------------------------------------------------");
 
 		Scanner scanner = new Scanner(System.in);
-		
+
 		try {
 
 			Iphone iPhone = new Iphone();
-		
+
 			int opcao = scanner.nextInt();
-			
+
 			if (opcao == 1) {
-				
+
 				iPhone.TelaPrincipal();
 
 			} else if (opcao == 2) {
@@ -51,7 +54,7 @@ public class Aparelho {
 	}
 
 	public static void painelControle() {
-		
+
 		Scanner scanner = new Scanner(System.in);
 
 		try {
