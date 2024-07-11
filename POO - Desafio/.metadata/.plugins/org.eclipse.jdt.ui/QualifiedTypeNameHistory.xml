@@ -12,7 +12,8 @@
     <fullyQualifiedTypeName name="com.apple.service.ICalendario"/>
     <fullyQualifiedTypeName name="com.apple.model.Aparelho"/>
     <fullyQualifiedTypeName name="org.w3c.dom.html.HTMLMapElement"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.apple.model.Iphone"/>
+    <fullyQualifiedTypeName name="com.apple.service.IReprodutorMusica"/>
     <fullyQualifiedTypeName name="com.apple.app.Aparelho"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

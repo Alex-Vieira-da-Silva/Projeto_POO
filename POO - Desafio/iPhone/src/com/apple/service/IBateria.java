@@ -4,5 +4,4 @@ public interface IBateria {
 
 	public void nivelBateria();
 	public void carregar();
-	public void descarregado();
 }

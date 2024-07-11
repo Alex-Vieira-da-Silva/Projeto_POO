@@ -1,0 +1,116 @@
+package com.apple.app;
+
+import java.util.Scanner;
+
+import com.apple.model.Iphone;
+
+public class Aparelho {
+
+	private static Scanner scanner = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+
+		TelaInicial();
+	}
+
+	public static void TelaInicial() {
+
+
+		try {
+
+			
+			int opcao = scanner.nextInt();
+			
+			if (opcao == 1) {
+				Iphone iPhone = new Iphone();
+				iPhone.TelaPrincipal();
+
+			} else if (opcao == 2) {
+
+				painelControle();
+
+			} else {
+				System.out.println("opção inválida, tente novamente!");
+				TelaInicial();
+			}
+
+		} catch (Exception e) {
+
+			System.out.println("Ocorreu um erro ao acessar as opção, tente novamente!");
+			TelaInicial();
+
+		} finally {
+			scanner.close();
+		}
+
+	}
+
+	public static void painelControle() {
+
+		try {
+
+			Iphone iPhone = new Iphone();
+
+			apresentacaoPainellControle();
+			int alternativa = scanner.nextInt();
+
+			if (alternativa == 1) {
+
+				iPhone.wifi();
+
+				System.out.println("Para sair digite 7!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 7)
+					TelaInicial();
+
+			} else if (alternativa == 2) {
+
+				iPhone.bluetooth();
+				System.out.println("Para sair digite 7!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 7)
+					TelaInicial();
+
+			} else if (alternativa == 3) {
+
+				iPhone.dadosMovel();
+
+				System.out.println("Para sair digite 7!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 7)
+					TelaInicial();
+
+			} else if (alternativa == 4) {
+
+				iPhone.nivelBateria();
+				System.out.println("Para sair digite 7!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 7)
+					TelaInicial();
+			}
+
+		} catch (Exception e) {
+
+			System.out.println("Opção inválida, tente novamente!");
+			TelaInicial();
+
+		} finally {
+			scanner.close();
+		}
+
+	}
+
+	private static void apresentacaoPainellControle() {
+
+		System.out
+				.println("----------------------------------Painel de Controle--------------------------------------");
+		System.out.println("Digite 1 par acessar o Wifi, 2 para Bluetooth, 3 para Dados Movel e 4 para Bateria !");
+		System.out
+				.println("------------------------------------------------------------------------------------------");
+
+	}
+}
