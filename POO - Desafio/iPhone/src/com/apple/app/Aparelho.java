@@ -111,7 +111,7 @@ public class Aparelho {
 
 	}
 
-	private static void apresentacaoPainellControle() {
+	private static void apresentacaoPainelControle() {
 
 		System.out
 				.println("----------------------------------Painel de Controle--------------------------------------");
