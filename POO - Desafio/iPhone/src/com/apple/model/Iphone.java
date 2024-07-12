@@ -19,11 +19,11 @@ import com.apple.service.IVolume;
 public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVideo, INavegaInternet, ISms, IEmail,
 		IAparelhoTelefonico, IBateria, IVolume, ICamera, ICalendario {
 
-	Scanner scanner = new Scanner(System.in);
-	private int alternativa = scanner.nextInt();
-
 	private boolean validacaoLigarIphone = false;
 	private boolean validacaoDesligarIphone = false;
+	private boolean validacaoAplicativos = false;
+	private boolean validacaoFuncionalidade = false;
+	private int selecionadarOpcao = 0;
 
 	public void telaPrincipal() {
 
@@ -44,6 +44,8 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 	private void funcionalidades() {
 
+		Scanner scanner = new Scanner(System.in);
+		int alternativa;
 		int opcao = scanner.nextInt();
 
 		try {
@@ -57,26 +59,49 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 					fazerLigacao();
 				else if (alternativa == 2)
 					receberLigacao();
+				else
+					System.out.println("Opção inválida, tente novamente!");
 
 			} else if (opcao == 2) {
 
 				System.out.println("Para enviar sms digite 1, e para receber 2!");
 				alternativa = scanner.nextInt();
 
-				if (alternativa == 1)
+				if (alternativa == 1) {
+
+					validacaoFuncionalidade = true;
 					enviarSms();
-				else if (alternativa == 2)
+
+				} else if (alternativa == 2) {
+
+					validacaoFuncionalidade = true;
 					receberSms();
+
+				} else {
+
+					System.out.println("Opção inválida, tente novamente!");
+
+				}
 
 			} else if (opcao == 3) {
 
 				System.out.println("Para enviar email digite 1, e para receber 2!");
 				alternativa = scanner.nextInt();
 
-				if (alternativa == 1)
+				if (alternativa == 1) {
+
+					validacaoFuncionalidade = true;
 					enviarEmail();
-				else if (alternativa == 2)
+
+				} else if (alternativa == 2) {
+
+					validacaoFuncionalidade = true;
 					receberEmail();
+
+				} else {
+
+					System.out.println("Opção inválida, tente novamente!");
+				}
 
 			} else if (opcao == 4) {
 
@@ -112,7 +137,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 				System.out.println("Para sair digite 3!");
 
-				int alternativa = scanner.nextInt();
+				alternativa = scanner.nextInt();
 
 				if (alternativa == 3)
 					telaPrincipal();
@@ -132,26 +157,60 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 	private void configuracoes() {
 
+		Scanner scanner = new Scanner(System.in);
+
 		String sistema = "ios";
 		String versao = "10";
 		String aparelho = "iPhone I";
 		String modelo = "4GB";
 		String anoFabricacao = "2007";
 
-		System.out.println("-------------Configuracões do Aparelho-------------");
+		System.out.println("---------------------Configuracões do Aparelho---------------------");
 		System.out.println("Aparelho: " + aparelho);
 		System.out.println("Sistema: " + sistema);
 		System.out.println("Versão: " + versao);
 		System.out.println("Modelo: " + modelo);
 		System.out.println("Ano de fabricação: " + anoFabricacao);
-		System.out.println("-------------------------------------------------");
+		System.out.println("--------------------------------------------------------------------");
 
-		System.out.println("Para sair digite 3!");
+		if (validacaoAplicativos == false) {
 
-		int alternativa = scanner.nextInt();
+			// Voltando ao menu de aplicativos e tela principal
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+			int alternativa = scanner.nextInt();
 
-		if (alternativa == 3)
-			telaPrincipal();
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
+				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
+
+		} else if (validacaoAplicativos == true) {
+
+			// Voltando ao menu da tela principal
+			System.out.println("Para sair digite 3!");
+			int alternativa = scanner.nextInt();
+
+			if (alternativa == 3) {
+
+				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando a tela principal!");
+				telaPrincipal();
+			}
+		}
+
+		scanner.close();
 
 	}
 
@@ -262,6 +321,18 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 	}
 
+	private void listarPaginas() {
+
+		System.out.println("--------------Lista de Páginas abertas--------------");
+		System.out.println("1 - www.santander.com.br ");
+		System.out.println("2 - www.dio.com.br");
+		System.out.println("3 - www.microsoft.com.br");
+		System.out.println("4 - www.educacao.com.br");
+		System.out.println("5 - www.java.com.br");
+		System.out.println("--------------------------------------------------");
+
+	}
+
 	private void listarFotos() {
 
 		System.out.println("------------------Lista de fotos----------------");
@@ -276,7 +347,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 	private void listarAplicativos() {
 
-		System.out.println("----------------Aplicativos---------------");
+		System.out.println("----------------------------Aplicativos----------------------------");
 		System.out.println("Digite 1 para Configurações");
 		System.out.println("Digite 2 para Reprodutor de Musica");
 		System.out.println("Digite 3 para Reprodutor de Foto");
@@ -287,8 +358,8 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		System.out.println("Digite 8 para Bateria");
 		System.out.println("Digite 9 para Camera");
 		System.out.println("Digite 10 para Calendario");
-		System.out.println("------------------------------------------");
-		System.out.println("Escolha uma das opções desejada, ou para voltar a tela inicial digite 0!");
+		System.out.println("--------------------------------------------------------------------");
+		System.out.println("Escolha uma das opções desejada, ou para voltar a tela principal digite 0!");
 
 	}
 
@@ -296,20 +367,75 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 	private void enviarSms() {
 
+		Scanner scanner = new Scanner(System.in);
+
 		System.out.println("Por favor informe o número com o DDD para enviar o sms!");
 		String numero = scanner.next();
 		String mensagem = enviarSms(numero);
 		System.out.println(mensagem);
 
-		System.out.println("Para sair digite 3!");
+		if (validacaoAplicativos == false) {
 
-		int alternativa = scanner.nextInt();
+			// Voltando ao menu de aplicativos e tela principal
 
-		if (alternativa == 3)
-			telaPrincipal();
+			if (validacaoFuncionalidade == true) {
+
+				System.out.println("Para sair digite 3!");
+
+				int alternativa = scanner.nextInt();
+
+				if (alternativa == 3) {
+
+					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando a tela principal!");
+				}
+
+			}
+
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+			int alternativa = scanner.nextInt();
+
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
+				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
+
+		} else if (validacaoAplicativos == true) {
+
+			// Voltando ao menu da tela principal
+			System.out.println("Para sair digite 3!");
+			int alternativa = scanner.nextInt();
+
+			if (alternativa == 3) {
+
+				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando a tela principal!");
+				telaPrincipal();
+			}
+		}
+
+		scanner.close();
+
 	}
 
 	private void fazerLigacao() {
+
+		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Por favor informe o número com o DDD para fazer a ligação!");
 		String numero = scanner.next();
@@ -318,7 +444,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		System.out.println(
 				"Para ajustar o volume digite 1, para ativar o viva voz digite 2, chamada em esperar digite 3, para encerrar a ligação digite 4!");
 
-		alternativa = scanner.nextInt();
+		int alternativa = scanner.nextInt();
 
 		if (alternativa == 1) {
 
@@ -341,7 +467,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			} else {
 
 				System.out.println("Opção inválida, tente novamente!");
-				telaPrincipal();
+
 			}
 
 			System.out.println("Para encerrar a ligação digite 4!");
@@ -366,6 +492,11 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 			encerrarLigacao();
 			telaPrincipal();
+
+		} else {
+
+			System.out.println("Opção inválida, tente novamente!");
+
 		}
 
 		System.out.println("Para encerrar a ligação digite 4!");
@@ -378,34 +509,91 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 		}
 
+		scanner.close();
+
 	}
 
 	private void enviarEmail() {
+
+		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Por favor informe o endereço de e-mail!");
 		String email = scanner.next();
 		String mensagem = enviarEmail(email);
 		System.out.println(mensagem);
 
-		System.out.println("Para sair digite 3!");
+		if (validacaoAplicativos == false) {
 
-		int alternativa = scanner.nextInt();
+			// Voltando ao menu de aplicativos e tela principal
+			if (validacaoFuncionalidade == true) {
 
-		if (alternativa == 3)
-			telaPrincipal();
+				System.out.println("Para sair digite 3!");
+
+				int alternativa = scanner.nextInt();
+
+				if (alternativa == 3) {
+
+					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando a tela principal!");
+
+				}
+
+			}
+
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+			int alternativa = scanner.nextInt();
+
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
+				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
+
+		} else if (validacaoAplicativos == true) {
+
+			// Voltando ao menu da tela principal
+			System.out.println("Para sair digite 3!");
+			int alternativa = scanner.nextInt();
+
+			if (alternativa == 3) {
+
+				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando a tela principal!");
+				telaPrincipal();
+			}
+		}
+
+		scanner.close();
 
 	}
 
 	private void aplicativos() {
 
+		Scanner scanner = new Scanner(System.in);
+
 		// Funcionalidade para acessar os aplicativos
 		listarAplicativos();
 
-		alternativa = scanner.nextInt();
+		int alternativa = scanner.nextInt();
 
 		if (alternativa == 1) {
 
 			// Funcionalidade para acessar as configurações
+			validacaoAplicativos = false;
 			configuracoes();
 
 		} else if (alternativa == 2) {
@@ -424,26 +612,108 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 			} else if (alternativa == 3) {
 
+				System.out.println("Para selecionar a música escolhar uma das opções!");
 				listarMusicas();
 				String selecionar = scanner.next();
+				selecionadarOpcao = Integer.parseInt(selecionar);
+
+				if (selecionadarOpcao > 5) {
+
+					System.out.println(
+							"Opção inválida, a música não esta na lista, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+
+					alternativa = scanner.nextInt();
+
+					if (alternativa == 5) {
+
+						aplicativos();
+
+					} else if (alternativa == 6) {
+
+						telaPrincipal();
+
+					} else {
+
+						System.out.println("Opção inválida, voltando aos aplicativos!");
+						aplicativos();
+					}
+
+				}
+
 				String mensagem = selecionarMusica(selecionar);
 				System.out.println(mensagem);
 
 			} else if (alternativa == 4) {
 
-				System.out.println("Para remover a música selecione a opção desejada!");
+				System.out.println("Para remover a música escolhar uma das opções!");
 				listarMusicas();
 				String selecionar = scanner.next();
+				selecionadarOpcao = Integer.parseInt(selecionar);
+
+				if (selecionadarOpcao > 5) {
+
+					System.out.println(
+							"Opção inválida, a música não esta na lista, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+
+					alternativa = scanner.nextInt();
+
+					if (alternativa == 5) {
+
+						aplicativos();
+
+					} else if (alternativa == 6) {
+
+						telaPrincipal();
+
+					} else {
+
+						System.out.println("Opção inválida, voltando aos aplicativos!");
+						aplicativos();
+					}
+
+				}
+
 				String mensagem = removerMusica(selecionar);
 				System.out.println(mensagem);
 
+			} else {
+
+				System.out.println(
+						"Opção inválida, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 5) {
+
+					aplicativos();
+
+				} else if (alternativa == 6) {
+
+					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando aos aplicativos!");
+					aplicativos();
+				}
+
 			}
 
-			System.out.println("Para sair digite 3!");
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 3)
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
 				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
 
 		} else if (alternativa == 3) {
 
@@ -461,27 +731,109 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 			} else if (alternativa == 3) {
 
-				System.out.println("Escolhar uma da opções desejadas!");
+				System.out.println("Para selecionar a foto escolhar uma das opções!");
 				listarFotos();
 				String selecionar = scanner.next();
+				selecionadarOpcao = Integer.parseInt(selecionar);
+
+				if (selecionadarOpcao > 5) {
+
+					System.out.println(
+							"Opção inválida, a foto não esta na lista, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+
+					alternativa = scanner.nextInt();
+
+					if (alternativa == 5) {
+
+						aplicativos();
+
+					} else if (alternativa == 6) {
+
+						telaPrincipal();
+
+					} else {
+
+						System.out.println("Opção inválida, voltando aos aplicativos!");
+						aplicativos();
+					}
+
+				}
+
 				String mensagem = selecionarfoto(selecionar);
 				System.out.println(mensagem);
 
 			} else if (alternativa == 4) {
 
-				System.out.println("Para remover a foto selecione a opção desejada!");
+				System.out.println("Para remover a foto escolhar uma das opções!");
 				listarFotos();
 				String selecionar = scanner.next();
+
+				selecionadarOpcao = Integer.parseInt(selecionar);
+
+				if (selecionadarOpcao > 5) {
+
+					System.out.println(
+							"Opção inválida, a foto não esta na lista, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+
+					alternativa = scanner.nextInt();
+
+					if (alternativa == 5) {
+
+						aplicativos();
+
+					} else if (alternativa == 6) {
+
+						telaPrincipal();
+
+					} else {
+
+						System.out.println("Opção inválida, voltando aos aplicativos!");
+						aplicativos();
+					}
+
+				}
+
 				String mensagem = removerFoto(selecionar);
 				System.out.println(mensagem);
 
+			} else {
+
+				System.out.println(
+						"Opção inválida, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 5) {
+
+					aplicativos();
+
+				} else if (alternativa == 6) {
+
+					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando aos aplicativos!");
+					aplicativos();
+				}
+
 			}
 
-			System.out.println("Para sair digite 3!");
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 3)
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
 				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
 
 		} else if (alternativa == 4) {
 
@@ -491,35 +843,118 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 			if (alternativa == 1) {
 
-				proxima();
+				tocar();
 
 			} else if (alternativa == 2) {
 
-				anterior();
+				pausar();
 
 			} else if (alternativa == 3) {
 
-				System.out.println("Escolhar uma da opções desejadas!");
+				System.out.println("Para selecionar o video escolhar uma das opções!");
 				listarVideos();
 				String selecionar = scanner.next();
+				selecionadarOpcao = Integer.parseInt(selecionar);
+
+				if (selecionadarOpcao > 5) {
+
+					System.out.println(
+							"Opção inválida, o video não esta na lista, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+
+					alternativa = scanner.nextInt();
+
+					if (alternativa == 5) {
+
+						aplicativos();
+
+					} else if (alternativa == 6) {
+
+						telaPrincipal();
+
+					} else {
+
+						System.out.println("Opção inválida, voltando aos aplicativos!");
+						aplicativos();
+					}
+
+				}
+
 				String mensagem = selecionarVideo(selecionar);
 				System.out.println(mensagem);
 
 			} else if (alternativa == 4) {
 
-				System.out.println("Para remover o video selecione a opção desejada!");
+				System.out.println("Para remover o video escolhar uma das opções!");
 				listarVideos();
 				String selecionar = scanner.next();
+				selecionadarOpcao = Integer.parseInt(selecionar);
+
+				if (selecionadarOpcao > 5) {
+
+					System.out.println(
+							"Opção inválida, o video não esta na lista, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+
+					alternativa = scanner.nextInt();
+
+					if (alternativa == 5) {
+
+						aplicativos();
+
+					} else if (alternativa == 6) {
+
+						telaPrincipal();
+
+					} else {
+
+						System.out.println("Opção inválida, voltando aos aplicativos!");
+						aplicativos();
+					}
+
+				}
+
 				String mensagem = removerVideo(selecionar);
 				System.out.println(mensagem);
 
 			}
 
-			System.out.println("Para sair digite 3!");
+			else {
+
+				System.out.println(
+						"Opção inválida, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 5) {
+
+					aplicativos();
+
+				} else if (alternativa == 6) {
+
+					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando aos aplicativos!");
+					aplicativos();
+				}
+
+			}
+
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 3)
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
 				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
 
 		} else if (alternativa == 5) {
 
@@ -529,8 +964,35 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 			if (alternativa == 1) {
 
-				System.out.println("Digite o endereço de url, para navegar na internet!");
+				System.out.println("Para selecionar a página de internet escolhar uma das opções!");
+				listarPaginas();
 				String enderecoUrl = scanner.next();
+
+				selecionadarOpcao = Integer.parseInt(enderecoUrl);
+
+				if (selecionadarOpcao > 5) {
+
+					System.out.println(
+							"Opção inválida, a página não esta na lista, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+
+					alternativa = scanner.nextInt();
+
+					if (alternativa == 5) {
+
+						aplicativos();
+
+					} else if (alternativa == 6) {
+
+						telaPrincipal();
+
+					} else {
+
+						System.out.println("Opção inválida, voltando aos aplicativos!");
+						aplicativos();
+					}
+
+				}
+
 				String mensagem = exibirPagina(enderecoUrl);
 				System.out.println(mensagem);
 
@@ -544,19 +1006,78 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 			} else if (alternativa == 4) {
 
-				System.out.println("Para remover a aba selecione a opção desejada!");
+				System.out.println("Para remover a aba escolhar uma das opções!");
 				listarAbas();
 				String selecionar = scanner.next();
+
+				selecionadarOpcao = Integer.parseInt(selecionar);
+
+				if (selecionadarOpcao > 5) {
+
+					System.out.println(
+							"Opção inválida, a página não esta na lista, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+
+					alternativa = scanner.nextInt();
+
+					if (alternativa == 5) {
+
+						aplicativos();
+
+					} else if (alternativa == 6) {
+
+						telaPrincipal();
+
+					} else {
+
+						System.out.println("Opção inválida, voltando aos aplicativos!");
+						aplicativos();
+					}
+
+				}
+
 				String mensagem = removerAba(selecionar);
 				System.out.println(mensagem);
 
 			}
 
-			System.out.println("Para sair digite 3!");
+			else {
+
+				System.out.println(
+						"Opção inválida, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 5) {
+
+					aplicativos();
+
+				} else if (alternativa == 6) {
+
+					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando aos aplicativos!");
+					aplicativos();
+				}
+
+			}
+
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 3)
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
 				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
 
 		} else if (alternativa == 6) {
 
@@ -566,17 +1087,50 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 			if (alternativa == 1) {
 
+				validacaoAplicativos = false;
 				enviarSms();
 
 			} else if (alternativa == 2) {
 
 				receberSms();
 
-				System.out.println("Para sair digite 3!");
+			} else {
+
+				System.out.println(
+						"Opção inválida, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
 				alternativa = scanner.nextInt();
 
-				if (alternativa == 3)
+				if (alternativa == 5) {
+
+					aplicativos();
+
+				} else if (alternativa == 6) {
+
 					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando aos aplicativos!");
+					aplicativos();
+				}
+
+			}
+
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+			alternativa = scanner.nextInt();
+
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
+				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
 			}
 
 		} else if (alternativa == 7) {
@@ -587,18 +1141,50 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 			if (alternativa == 1) {
 
+				validacaoAplicativos = false;
 				enviarEmail();
 
 			} else if (alternativa == 2) {
 
 				receberEmail();
 
-				System.out.println("Para sair digite 3!");
+			} else {
+
+				System.out.println(
+						"Opção inválida, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
 				alternativa = scanner.nextInt();
 
-				if (alternativa == 3)
+				if (alternativa == 5) {
+
+					aplicativos();
+
+				} else if (alternativa == 6) {
+
 					telaPrincipal();
 
+				} else {
+
+					System.out.println("Opção inválida, voltando aos aplicativos!");
+					aplicativos();
+				}
+
+			}
+
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+			alternativa = scanner.nextInt();
+
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
+				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
 			}
 
 		} else if (alternativa == 8) {
@@ -607,16 +1193,52 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			opcaoMensagemBateria();
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 1)
+			if (alternativa == 1) {
+
 				nivelBateria();
-			else if (alternativa == 2)
+
+			} else if (alternativa == 2) {
+
 				carregar();
 
-			System.out.println("Para sair digite 3!");
+			} else {
+
+				System.out.println(
+						"Opção inválida, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 5) {
+
+					aplicativos();
+
+				} else if (alternativa == 6) {
+
+					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando aos aplicativos!");
+					aplicativos();
+				}
+
+			}
+
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 3)
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
 				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
 
 		} else if (alternativa == 9) {
 
@@ -624,20 +1246,60 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			opcaoMensagemCamera();
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 1)
+			if (alternativa == 1) {
+
 				ligarCamera();
-			else if (alternativa == 2)
+
+			} else if (alternativa == 2) {
+
 				tirarFoto();
-			else if (alternativa == 3)
+
+			} else if (alternativa == 3) {
+
 				criarVideo();
-			else if (alternativa == 4)
+
+			} else if (alternativa == 4) {
+
 				desligarCamera();
 
-			System.out.println("Para sair digite 3!");
+			} else {
+
+				System.out.println(
+						"Opção inválida, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 5) {
+
+					aplicativos();
+
+				} else if (alternativa == 6) {
+
+					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando aos aplicativos!");
+					aplicativos();
+				}
+
+			}
+
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 3)
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
 				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
 
 		} else if (alternativa == 10) {
 
@@ -645,37 +1307,98 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			opcaoMensagemCalendario();
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 1)
+			if (alternativa == 1) {
+
 				obterData();
 
-			System.out.println("Para sair digite 3!");
+			} else {
+
+				System.out.println(
+						"Opção inválida, para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
+				alternativa = scanner.nextInt();
+
+				if (alternativa == 5) {
+
+					aplicativos();
+
+				} else if (alternativa == 6) {
+
+					telaPrincipal();
+
+				} else {
+
+					System.out.println("Opção inválida, voltando aos aplicativos!");
+					aplicativos();
+				}
+
+			}
+
+			System.out.println("Para voltar aos aplicativos digite 5, ou para voltar a tela principal 6!");
 			alternativa = scanner.nextInt();
 
-			if (alternativa == 3)
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else if (alternativa == 6) {
+
 				telaPrincipal();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando aos aplicativos!");
+				aplicativos();
+			}
 
 		} else if (alternativa == 0) {
 
-			Aparelho.telaInicial();
+			telaPrincipal();
+
+		} else {
+
+			System.out.println("Opção inválida, para voltar aos aplicativos digite 5!");
+			alternativa = scanner.nextInt();
+
+			if (alternativa == 5) {
+
+				aplicativos();
+
+			} else {
+
+				System.out.println("Opção inválida, voltando a tela principal!");
+				telaPrincipal();
+			}
 
 		}
 
+		scanner.close();
 	}
 
 	private void configuracoesIphone() {
 
+		Scanner scanner = new Scanner(System.in);
+
+		validacaoAplicativos = true;
 		configuracoes();
 		System.out.println("Para voltar a tela inicial digite 0!");
 		int alternativa = scanner.nextInt();
 
-		if (alternativa == 0)
+		if (alternativa == 0) {
+
 			telaPrincipal();
+
+		}
+
+		scanner.close();
+
 	}
 
 	private void desligarIphone() {
 
+		Scanner scanner = new Scanner(System.in);
+
 		System.out.println("Para desligar digite 1, para reiniciar 2, e para cancelar 3!");
-		alternativa = scanner.nextInt();
+		int alternativa = scanner.nextInt();
 
 		if (alternativa == 1) {
 
@@ -690,6 +1413,11 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 				mensagemLigarIphone();
 				Aparelho.telaInicial();
 
+			} else if (alternativa == 3) {
+
+				System.out.println(
+						"Obrigado, por utilizar o iPhone I, em homenagem a Steve Jobs 24/02/1955 a 05/10/2011 !!!");
+
 			}
 
 		} else if (alternativa == 2) {
@@ -700,7 +1428,11 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 3) {
 
 			telaPrincipal();
+
 		}
+
+		scanner.close();
+
 	}
 
 	private void ligarIphone() {
@@ -722,7 +1454,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 	@Override
 	public void tocar() {
 
-		System.out.println("Tocando a musica!");
+		System.out.println("Iniciando!");
 
 	}
 

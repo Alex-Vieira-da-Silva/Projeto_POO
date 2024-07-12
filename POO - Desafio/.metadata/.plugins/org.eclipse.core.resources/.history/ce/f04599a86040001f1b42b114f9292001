@@ -1,0 +1,78 @@
+package com.apple.app;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import com.apple.model.Iphone;
+
+public class Aparelho {
+
+    public static void main(String[] args) {
+        exibirTelaInicial();
+    }
+
+    public static void exibirTelaInicial() {
+        System.out.println("---------------------Sejam todos(as) Bem-Vindos ao Mundo Apple, iPhone I!---------------------------");
+        System.out.println("Para acessar a tela principal do iPhone, digite 1. Para acessar o painel de controle, digite 2!");
+        System.out.println("----------------------------------------------------------------------------------------------------");
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            int opcao = scanner.nextInt();
+
+            if (opcao == 1) {
+                Iphone iPhone = new Iphone();
+                iPhone.telaPrincipal();
+            } else if (opcao == 2) {
+                exibirPainelControle();
+            } else {
+                System.out.println("Opção inválida, tente novamente!");
+                exibirTelaInicial();
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Entrada inválida. Digite um número.");
+            exibirTelaInicial();
+        }
+    }
+
+    public static void exibirPainelControle() {
+        try (Scanner scanner = new Scanner(System.in)) {
+            Iphone iPhone = new Iphone();
+            apresentacaoPainelControle();
+
+            int alternativa = scanner.nextInt();
+
+            switch (alternativa) {
+                case 1:
+                    iPhone.wifi();
+                    break;
+                case 2:
+                    iPhone.bluetooth();
+                    break;
+                case 3:
+                    iPhone.dadosMovel();
+                    break;
+                case 4:
+                    iPhone.nivelBateria();
+                    break;
+                default:
+                    System.out.println("Opção inválida, tente novamente!");
+                    exibirPainelControle();
+            }
+
+            System.out.println("Para sair, digite 7!");
+            alternativa = scanner.nextInt();
+            if (alternativa == 7) {
+                exibirTelaInicial();
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Entrada inválida. Digite um número.");
+            exibirPainelControle();
+        }
+    }
+
+    private static void apresentacaoPainelControle() {
+        System.out.println("----------------------------------Painel de Controle--------------------------------------");
+        System.out.println("Digite 1 para acessar o Wifi, 2 para Bluetooth, 3 para Dados Móveis e 4 para Bateria!");
+        System.out.println("------------------------------------------------------------------------------------------");
+    }
+}
