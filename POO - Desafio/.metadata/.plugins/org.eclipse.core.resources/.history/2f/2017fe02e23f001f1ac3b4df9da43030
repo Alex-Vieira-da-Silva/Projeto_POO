@@ -19,7 +19,7 @@ public class Aparelho {
 		System.out.println(
 				"Para acessar a tela principal do iPhone digite 1, ou para acessar o painel de controle digite 2!");
 		System.out.println(
-				"----------------------------------------------------------------------------------------------------");
+				"---------------------------------------------------------------------------------------------------");
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -31,7 +31,7 @@ public class Aparelho {
 
 			if (opcao == 1) {
 
-				iPhone.telaPrincipal();
+				iPhone.TelaPrincipal();
 
 			} else if (opcao == 2) {
 

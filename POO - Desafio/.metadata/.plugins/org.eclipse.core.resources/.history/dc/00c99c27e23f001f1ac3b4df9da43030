@@ -104,19 +104,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 				telaPrincipal();
 			}
 
-			if (validacaoDesligarIphone == true) {
-
-				return;
-
-			} else {
-
-				System.out.println("Para sair digite 3!");
-
-				int alternativa = scanner.nextInt();
-
-				if (alternativa == 3)
-					telaPrincipal();
-			}
+			
 
 		} catch (Exception e) {
 

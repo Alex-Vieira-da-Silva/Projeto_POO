@@ -8,10 +8,10 @@ public class Aparelho {
 
 	public static void main(String[] args) {
 
-		telaInicial();
+		TelaInicial();
 	}
 
-	public static void telaInicial() {
+	public static void TelaInicial() {
 
 		System.out.println(
 				"---------------------Sejam todos(a) Bem-Vindos ao Mundo Apple, iPhone I !---------------------------");
@@ -19,7 +19,7 @@ public class Aparelho {
 		System.out.println(
 				"Para acessar a tela principal do iPhone digite 1, ou para acessar o painel de controle digite 2!");
 		System.out.println(
-				"----------------------------------------------------------------------------------------------------");
+				"---------------------------------------------------------------------------------------------------");
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -31,7 +31,7 @@ public class Aparelho {
 
 			if (opcao == 1) {
 
-				iPhone.telaPrincipal();
+				iPhone.TelaPrincipal();
 
 			} else if (opcao == 2) {
 
@@ -39,13 +39,13 @@ public class Aparelho {
 
 			} else {
 				System.out.println("opção inválida, tente novamente!");
-				telaInicial();
+				TelaInicial();
 			}
 
 		} catch (Exception e) {
 
 			System.out.println("Ocorreu um erro ao acessar as opção, tente novamente!");
-			telaInicial();
+			TelaInicial();
 
 		} finally {
 			scanner.close();
@@ -61,7 +61,7 @@ public class Aparelho {
 
 			Iphone iPhone = new Iphone();
 
-			apresentacaoPainelControle();
+			apresentacaoPainellControle();
 			int alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -72,7 +72,7 @@ public class Aparelho {
 				alternativa = scanner.nextInt();
 
 				if (alternativa == 7)
-					telaInicial();
+					TelaInicial();
 
 			} else if (alternativa == 2) {
 
@@ -81,7 +81,7 @@ public class Aparelho {
 				alternativa = scanner.nextInt();
 
 				if (alternativa == 7)
-					telaInicial();
+					TelaInicial();
 
 			} else if (alternativa == 3) {
 
@@ -91,7 +91,7 @@ public class Aparelho {
 				alternativa = scanner.nextInt();
 
 				if (alternativa == 7)
-					telaInicial();
+					TelaInicial();
 
 			} else if (alternativa == 4) {
 
@@ -100,13 +100,13 @@ public class Aparelho {
 				alternativa = scanner.nextInt();
 
 				if (alternativa == 7)
-					telaInicial();
+					TelaInicial();
 			}
 
 		} catch (Exception e) {
 
 			System.out.println("Opção inválida, tente novamente!");
-			telaInicial();
+			TelaInicial();
 
 		} finally {
 			scanner.close();

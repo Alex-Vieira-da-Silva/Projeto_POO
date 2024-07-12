@@ -27,6 +27,8 @@ public class Aparelho {
 
 			Iphone iPhone = new Iphone();
 
+			scanner.nextLine();
+			
 			int opcao = scanner.nextInt();
 
 			if (opcao == 1) {

@@ -25,7 +25,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 	private boolean validacaoLigarIphone = false;
 	private boolean validacaoDesligarIphone = false;
 
-	public void telaPrincipal() {
+	public void TelaPrincipal() {
 
 		System.out.println("---------------------Tela Principal--------------------------------");
 		System.out.println("Digite 1 para fazer ou receber ligação!");
@@ -96,12 +96,12 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 
 			} else if (opcao == 8) {
 
-				Aparelho.telaInicial();
+				Aparelho.TelaInicial();
 
 			} else {
 
 				System.out.println("Alternativa inválida, tente novamente!");
-				telaPrincipal();
+				TelaPrincipal();
 			}
 
 			if (validacaoDesligarIphone == true) {
@@ -115,14 +115,14 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 				int alternativa = scanner.nextInt();
 
 				if (alternativa == 3)
-					telaPrincipal();
+					TelaPrincipal();
 			}
 
 		} catch (Exception e) {
 
 			System.out.println("Ocorreu um erro, ao acessar a opção!");
 			mensagemReiniciarIphone();
-			Aparelho.telaInicial();
+			Aparelho.TelaInicial();
 
 		} finally {
 			scanner.close();
@@ -151,7 +151,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		int alternativa = scanner.nextInt();
 
 		if (alternativa == 3)
-			telaPrincipal();
+			TelaPrincipal();
 
 	}
 
@@ -306,7 +306,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		int alternativa = scanner.nextInt();
 
 		if (alternativa == 3)
-			telaPrincipal();
+			TelaPrincipal();
 	}
 
 	private void fazerLigacao() {
@@ -341,7 +341,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			} else {
 
 				System.out.println("Opção inválida, tente novamente!");
-				telaPrincipal();
+				TelaPrincipal();
 			}
 
 			System.out.println("Para encerrar a ligação digite 4!");
@@ -350,7 +350,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			if (alternativa == 4) {
 
 				encerrarLigacao();
-				telaPrincipal();
+				TelaPrincipal();
 
 			}
 
@@ -365,7 +365,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 4) {
 
 			encerrarLigacao();
-			telaPrincipal();
+			TelaPrincipal();
 		}
 
 		System.out.println("Para encerrar a ligação digite 4!");
@@ -374,7 +374,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		if (alternativa == 4) {
 
 			encerrarLigacao();
-			telaPrincipal();
+			TelaPrincipal();
 
 		}
 
@@ -392,7 +392,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		int alternativa = scanner.nextInt();
 
 		if (alternativa == 3)
-			telaPrincipal();
+			TelaPrincipal();
 
 	}
 
@@ -443,7 +443,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 3)
-				telaPrincipal();
+				TelaPrincipal();
 
 		} else if (alternativa == 3) {
 
@@ -481,7 +481,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 3)
-				telaPrincipal();
+				TelaPrincipal();
 
 		} else if (alternativa == 4) {
 
@@ -519,7 +519,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 3)
-				telaPrincipal();
+				TelaPrincipal();
 
 		} else if (alternativa == 5) {
 
@@ -556,7 +556,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 3)
-				telaPrincipal();
+				TelaPrincipal();
 
 		} else if (alternativa == 6) {
 
@@ -576,7 +576,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 				alternativa = scanner.nextInt();
 
 				if (alternativa == 3)
-					telaPrincipal();
+					TelaPrincipal();
 			}
 
 		} else if (alternativa == 7) {
@@ -597,7 +597,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 				alternativa = scanner.nextInt();
 
 				if (alternativa == 3)
-					telaPrincipal();
+					TelaPrincipal();
 
 			}
 
@@ -616,7 +616,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 3)
-				telaPrincipal();
+				TelaPrincipal();
 
 		} else if (alternativa == 9) {
 
@@ -637,7 +637,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 3)
-				telaPrincipal();
+				TelaPrincipal();
 
 		} else if (alternativa == 10) {
 
@@ -652,11 +652,11 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 3)
-				telaPrincipal();
+				TelaPrincipal();
 
 		} else if (alternativa == 0) {
 
-			Aparelho.telaInicial();
+			Aparelho.TelaInicial();
 
 		}
 
@@ -669,7 +669,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		int alternativa = scanner.nextInt();
 
 		if (alternativa == 0)
-			telaPrincipal();
+			TelaPrincipal();
 	}
 
 	private void desligarIphone() {
@@ -688,18 +688,18 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 			if (alternativa == 2) {
 
 				mensagemLigarIphone();
-				Aparelho.telaInicial();
+				Aparelho.TelaInicial();
 
 			}
 
 		} else if (alternativa == 2) {
 
 			mensagemReiniciarIphone();
-			Aparelho.telaInicial();
+			Aparelho.TelaInicial();
 
 		} else if (alternativa == 3) {
 
-			telaPrincipal();
+			TelaPrincipal();
 		}
 	}
 
@@ -708,7 +708,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		if (validacaoLigarIphone == true) {
 
 			mensagemLigarIphone();
-			telaPrincipal();
+			TelaPrincipal();
 
 		} else {
 
