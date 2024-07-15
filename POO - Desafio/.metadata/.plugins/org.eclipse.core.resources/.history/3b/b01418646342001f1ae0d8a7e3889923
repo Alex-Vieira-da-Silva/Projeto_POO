@@ -387,14 +387,14 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		String mensagem = fazerLigacao(numero);
 		System.out.println(mensagem);
 		System.out.println(
-				"Para ajustar o volume digite 1, para ativar o viva voz 2, chamada em esperar 3, para encerrar a ligação 4!");
+				"Para ajustar o volume digite 1, para ativar o viva voz digite 2, chamada em esperar digite 3, para encerrar a ligação digite 4!");
 
 		int alternativa = scanner.nextInt();
 
 		if (alternativa == 1) {
 
 			System.out.println(
-					"Para diminuir o volume digite 2, para aumentar o volume 3, e para ativar o silênciar 4!");
+					"Para diminuir o volume digite 2, para aumentar o volume digite 3 e para ativar o silênciar digite 4!");
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 2) {
@@ -1626,27 +1626,27 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 	@Override
 	public void wifi() {
 
-		System.out.println("Wifi esta ativo, vc esta conectado a rede 'Dio_global'!");
+		System.out.println("Wifi esta ativo, vc esta conectado a rede 'Dio_global' !");
 	}
 
 	@Override
 	public void bluetooth() {
 
-		System.out.println("Bluetooth esta ativo, vc esta conectado ao 'AirPods'!");
+		System.out.println("Bluetooth esta ativo, vc esta conectado ao 'Apple watch' !");
 
 	}
 
 	@Override
 	public void dadosMovel() {
 
-		System.out.println("Dados Móvel esta ativo, vc esta conectado a operadora 'Claro_gsm'!");
+		System.out.println("Dados Movel esta ativo, vc esta conectado a operadora 'Claro_gsm' !");
 
 	}
 
 	@Override
 	public String removerAba(String aba) {
 
-		aba = "Aba removida com sucesso!";
+		aba = "Aba removida!";
 		return aba;
 
 	}
@@ -1654,7 +1654,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 	@Override
 	public String removerFoto(String foto) {
 
-		foto = "Foto removida com sucesso!";
+		foto = "Foto removida!";
 		return foto;
 	}
 

@@ -15,10 +15,11 @@ public class Aparelho {
 
 		System.out.println(
 				"---------------------Sejam todos(a) Bem-Vindos ao Mundo Apple, iPhone I !---------------------------");
-		System.out.println();
+		System.out.println();                                                                                      
 		System.out.println("                      Em homenagem a Steve Jobs 24/02/1955 a 05/10/2011 !");
 		System.out.println();
-		System.out.println("Para acessar a tela principal do iPhone digite 1, ou para acessar o painel de controle 2!");
+		System.out.println(
+				"Para acessar a tela principal do iPhone digite 1, ou para acessar o painel de controle digite 2!");
 		System.out.println(
 				"----------------------------------------------------------------------------------------------------");
 
@@ -73,13 +74,13 @@ public class Aparelho {
 				alternativa = scanner.nextInt();
 
 				if (alternativa == 5) {
-
+					
 					painelControle();
 
-				} else if (alternativa == 7) {
-
+				} else if(alternativa == 7){
+					
 					telaInicial();
-
+					
 				} else {
 
 					System.out.println("opção inválida, voltando ao painel de controle!");
@@ -96,10 +97,10 @@ public class Aparelho {
 
 					painelControle();
 
-				} else if (alternativa == 7) {
-
+				} else if(alternativa == 7){
+					
 					telaInicial();
-
+					
 				} else {
 
 					System.out.println("opção inválida, voltando ao painel de controle!");
@@ -117,10 +118,10 @@ public class Aparelho {
 
 					painelControle();
 
-				} else if (alternativa == 7) {
-
+				} else if(alternativa == 7){
+					
 					telaInicial();
-
+					
 				} else {
 
 					System.out.println("opção inválida, voltando ao painel de controle!");
@@ -137,23 +138,15 @@ public class Aparelho {
 
 					painelControle();
 
-				} else if (alternativa == 7) {
-
+				} else if(alternativa == 7){
+					
 					telaInicial();
-
+					
 				} else {
 
 					System.out.println("opção inválida, voltando ao painel de controle!");
 					painelControle();
 				}
-			} else if (alternativa == 7) {
-
-				telaInicial();
-			} else {
-
-				System.out.println("opção inválida, voltando ao painel de controle!");
-				painelControle();
-
 			}
 
 		} catch (Exception e) {
@@ -169,12 +162,11 @@ public class Aparelho {
 
 	private static void apresentacaoPainelControle() {
 
-		System.out.println(
-				"----------------------------------Painel de Controle--------------------------------------------------------------------");
-		System.out.println(
-				"Para acessar o Wifi digite 1, para Bluetooth 2, para Dados Movel 3, e para Bateria 4, e para voltar a tela inicial 7!");
-		System.out.println(
-				"------------------------------------------------------------------------------------------------------------------------");
+		System.out
+				.println("----------------------------------Painel de Controle--------------------------------------");
+		System.out.println("Para acessar o Wifi digite 1, para Bluetooth 2, para Dados Movel 3, e para Bateria 4 !");
+		System.out
+				.println("------------------------------------------------------------------------------------------");
 
 	}
 }

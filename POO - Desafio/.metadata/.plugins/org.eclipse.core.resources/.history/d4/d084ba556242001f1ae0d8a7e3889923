@@ -18,7 +18,8 @@ public class Aparelho {
 		System.out.println();
 		System.out.println("                      Em homenagem a Steve Jobs 24/02/1955 a 05/10/2011 !");
 		System.out.println();
-		System.out.println("Para acessar a tela principal do iPhone digite 1, ou para acessar o painel de controle 2!");
+		System.out.println(
+				"Para acessar a tela principal do iPhone digite 1, ou para acessar o painel de controle digite 2!");
 		System.out.println(
 				"----------------------------------------------------------------------------------------------------");
 
@@ -69,97 +70,74 @@ public class Aparelho {
 
 				iPhone.wifi();
 
-				System.out.println("Para voltar ao painel de controle digite 5, ou para voltar a tela inicial 7!");
+				System.out.println("Para sair digite 7!");
 				alternativa = scanner.nextInt();
 
-				if (alternativa == 5) {
-
-					painelControle();
-
-				} else if (alternativa == 7) {
+				if (alternativa == 7) {
 
 					telaInicial();
 
 				} else {
 
-					System.out.println("opção inválida, voltando ao painel de controle!");
-					painelControle();
+					System.out.println("opção inválida, tente novamente!");
+					telaInicial();
 				}
 
 			} else if (alternativa == 2) {
 
 				iPhone.bluetooth();
-				System.out.println("Para voltar ao painel de controle digite 5, ou para voltar a tela inicial 7!");
+				System.out.println("Para sair digite 7!");
 				alternativa = scanner.nextInt();
 
-				if (alternativa == 5) {
-
-					painelControle();
-
-				} else if (alternativa == 7) {
+				if (alternativa == 7) {
 
 					telaInicial();
 
 				} else {
 
-					System.out.println("opção inválida, voltando ao painel de controle!");
-					painelControle();
+					System.out.println("opção inválida, tente novamente!");
+					telaInicial();
 				}
 
 			} else if (alternativa == 3) {
 
 				iPhone.dadosMovel();
 
-				System.out.println("Para voltar ao painel de controle digite 5, ou para voltar a tela inicial 7!");
+				System.out.println("Para sair digite 7!");
 				alternativa = scanner.nextInt();
 
-				if (alternativa == 5) {
-
-					painelControle();
-
-				} else if (alternativa == 7) {
+				if (alternativa == 7) {
 
 					telaInicial();
 
 				} else {
 
-					System.out.println("opção inválida, voltando ao painel de controle!");
-					painelControle();
+					System.out.println("opção inválida, tente novamente!");
+					telaInicial();
 				}
 
 			} else if (alternativa == 4) {
 
 				iPhone.nivelBateria();
-				System.out.println("Para voltar ao painel de controle digite 5, ou para voltar a tela inicial 7!");
+				System.out.println("Para sair digite 7!");
 				alternativa = scanner.nextInt();
 
-				if (alternativa == 5) {
-
-					painelControle();
-
-				} else if (alternativa == 7) {
+				if (alternativa == 7) {
 
 					telaInicial();
 
 				} else {
 
-					System.out.println("opção inválida, voltando ao painel de controle!");
-					painelControle();
+					System.out.println("opção inválida, tente novamente!");
+					telaInicial();
 				}
-			} else if (alternativa == 7) {
-
-				telaInicial();
-			} else {
-
-				System.out.println("opção inválida, voltando ao painel de controle!");
-				painelControle();
 
 			}
 
 		} catch (Exception e) {
 
-			System.out.println("opção inválida, voltando ao painel de controle!");
-			painelControle();
+			System.out.println("Opção inválida, tente novamente!");
+			telaInicial();
 
 		} finally {
 			scanner.close();
@@ -169,12 +147,11 @@ public class Aparelho {
 
 	private static void apresentacaoPainelControle() {
 
-		System.out.println(
-				"----------------------------------Painel de Controle--------------------------------------------------------------------");
-		System.out.println(
-				"Para acessar o Wifi digite 1, para Bluetooth 2, para Dados Movel 3, e para Bateria 4, e para voltar a tela inicial 7!");
-		System.out.println(
-				"------------------------------------------------------------------------------------------------------------------------");
+		System.out
+				.println("----------------------------------Painel de Controle--------------------------------------");
+		System.out.println("Digite 1 par acessar o Wifi, 2 para Bluetooth, 3 para Dados Movel e 4 para Bateria !");
+		System.out
+				.println("------------------------------------------------------------------------------------------");
 
 	}
 }

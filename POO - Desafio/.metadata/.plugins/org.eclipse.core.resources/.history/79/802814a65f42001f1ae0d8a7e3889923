@@ -219,16 +219,68 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		System.out.println("iPhone ligado - Apple Inc...!");
 	}
 
-	private void mensagemDesligarIphone() {
-
-		System.out.println("iPhone Desligado!");
-	}
+	
 
 	private void mensagemReiniciarIphone() {
 
 		System.out.println("iPhone Reiniciado!");
 	}
 
+	private void opcaoMensagemReprodutorMusica() {
+
+		System.out.println("Para iniciar a musica digite 1, para pausar 2, para selecionar 3, e para remover 4!");
+	}
+
+	private void opcaoMensagemReprodutorFoto() {
+
+		System.out
+				.println("Passar para próxima foto digite 1, ir para anterior 2, para selecionar 3, e para remover 4!");
+
+	}
+
+	private void opcaoMensagemReprodutorVideo() {
+
+		System.out.println("Para iniciar o video digite 1, para pausar 2, para selecionar 3, e para remover 4!");
+
+	}
+
+	private void opcaoMensagemNavegadorInternet() {
+
+		System.out.println(
+				"Para exibir a página digite 1, para adicionar uma nova aba 2, para atualizar a página 3, e para remover a aba 4!");
+
+	}
+
+	private void opcaoMensagemSms() {
+
+		System.out.println("Para enviar sms digite 1, e para receber 2!");
+
+	}
+
+	private void opcaoMensagemEmail() {
+
+		System.out.println("Para enviar email digite 1, e para receber 2!");
+
+	}
+
+	private void opcaoMensagemBateria() {
+
+		System.out.println("Para verificar o nível da bateria digite 1, e para carregar 2!");
+
+	}
+
+	private void opcaoMensagemCamera() {
+
+		System.out.println(
+				"Para ligar a camera digite 1, para tirar foto 2, para criar video 3 e para desligar camera 4!");
+
+	}
+
+	private void opcaoMensagemCalendario() {
+
+		System.out.println("Para ver a data atual digite 1!");
+
+	}
 
 	private void listarMusicas() {
 
@@ -387,14 +439,14 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		String mensagem = fazerLigacao(numero);
 		System.out.println(mensagem);
 		System.out.println(
-				"Para ajustar o volume digite 1, para ativar o viva voz 2, chamada em esperar 3, para encerrar a ligação 4!");
+				"Para ajustar o volume digite 1, para ativar o viva voz digite 2, chamada em esperar digite 3, para encerrar a ligação digite 4!");
 
 		int alternativa = scanner.nextInt();
 
 		if (alternativa == 1) {
 
 			System.out.println(
-					"Para diminuir o volume digite 2, para aumentar o volume 3, e para ativar o silênciar 4!");
+					"Para diminuir o volume digite 2, para aumentar o volume digite 3 e para ativar o silênciar digite 4!");
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 2) {
@@ -544,7 +596,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 2) {
 
 			// Funcionalidade do Reprodutor de Música
-			System.out.println("Para iniciar a musica digite 1, para pausar 2, para selecionar 3, e para remover 4!");
+			opcaoMensagemReprodutorMusica();
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -663,7 +715,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 3) {
 
 			// Funcionalidade do Reprodutor de Foto
-			System.out.println("Passar para próxima foto digite 1, ir para anterior 2, para selecionar 3, e para remover 4!");
+			opcaoMensagemReprodutorFoto();
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -783,7 +835,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 4) {
 
 			// Funcionalidade do Reprodutor de Video
-			System.out.println("Para iniciar o video digite 1, para pausar 2, para selecionar 3, e para remover 4!");
+			opcaoMensagemReprodutorVideo();
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -904,7 +956,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 5) {
 
 			// Funcionalidade do Navegador de Internet
-			System.out.println("Para exibir a página digite 1, para adicionar uma nova aba 2, para atualizar a página 3, e para remover a aba 4!");
+			opcaoMensagemNavegadorInternet();
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -1027,7 +1079,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 6) {
 
 			// Funcionalidade de Sms
-			System.out.println("Para enviar sms digite 1, e para receber 2!");
+			opcaoMensagemSms();
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -1081,7 +1133,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 7) {
 
 			// Funcionalidade de Email
-			System.out.println("Para enviar email digite 1, e para receber 2!");
+			opcaoMensagemEmail();
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -1135,7 +1187,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 8) {
 
 			// Funcionalidade da Bateria
-			System.out.println("Para verificar o nível da bateria digite 1, e para carregar 2!");
+			opcaoMensagemBateria();
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -1188,7 +1240,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 9) {
 
 			// Funcionalidade da Camera
-			System.out.println("Para ligar a camera digite 1, para tirar foto 2, para criar video 3 e para desligar camera 4!");
+			opcaoMensagemCamera();
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -1249,7 +1301,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		} else if (alternativa == 10) {
 
 			// Funcionalidade do Calendario
-			System.out.println("Para ver a data atual digite 1!");
+			opcaoMensagemCalendario();
 			alternativa = scanner.nextInt();
 
 			if (alternativa == 1) {
@@ -1626,27 +1678,27 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 	@Override
 	public void wifi() {
 
-		System.out.println("Wifi esta ativo, vc esta conectado a rede 'Dio_global'!");
+		System.out.println("Wifi esta ativo!");
 	}
 
 	@Override
 	public void bluetooth() {
 
-		System.out.println("Bluetooth esta ativo, vc esta conectado ao 'AirPods'!");
+		System.out.println("Bluetooth esta ativo!");
 
 	}
 
 	@Override
 	public void dadosMovel() {
 
-		System.out.println("Dados Móvel esta ativo, vc esta conectado a operadora 'Claro_gsm'!");
+		System.out.println("Dados Movel esta ativo!");
 
 	}
 
 	@Override
 	public String removerAba(String aba) {
 
-		aba = "Aba removida com sucesso!";
+		aba = "Aba removida!";
 		return aba;
 
 	}
@@ -1654,7 +1706,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 	@Override
 	public String removerFoto(String foto) {
 
-		foto = "Foto removida com sucesso!";
+		foto = "Foto removida!";
 		return foto;
 	}
 

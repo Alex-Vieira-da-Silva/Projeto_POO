@@ -387,7 +387,7 @@ public class Iphone implements IReprodutorMusica, IReprodutorFoto, IReprodutorVi
 		String mensagem = fazerLigacao(numero);
 		System.out.println(mensagem);
 		System.out.println(
-				"Para ajustar o volume digite 1, para ativar o viva voz 2, chamada em esperar 3, para encerrar a ligação 4!");
+				"Para ajustar o volume digite 1, para ativar o viva voz 2, chamada em esperar digite 3, para encerrar a ligação 4!");
 
 		int alternativa = scanner.nextInt();
 

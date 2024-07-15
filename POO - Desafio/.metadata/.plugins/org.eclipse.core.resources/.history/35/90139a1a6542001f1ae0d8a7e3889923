@@ -149,11 +149,6 @@ public class Aparelho {
 			} else if (alternativa == 7) {
 
 				telaInicial();
-			} else {
-
-				System.out.println("opção inválida, voltando ao painel de controle!");
-				painelControle();
-
 			}
 
 		} catch (Exception e) {
@@ -169,12 +164,12 @@ public class Aparelho {
 
 	private static void apresentacaoPainelControle() {
 
-		System.out.println(
-				"----------------------------------Painel de Controle--------------------------------------------------------------------");
+		System.out
+				.println("----------------------------------Painel de Controle--------------------------------------------------------------");
 		System.out.println(
 				"Para acessar o Wifi digite 1, para Bluetooth 2, para Dados Movel 3, e para Bateria 4, e para voltar a tela inicial 7!");
-		System.out.println(
-				"------------------------------------------------------------------------------------------------------------------------");
+		System.out
+				.println("-------------------------------------------------------------------------------------------------------------------");
 
 	}
 }
